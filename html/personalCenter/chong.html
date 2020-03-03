@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/font.css" />
+    <script type="text/javascript" src="../../js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="../../layer/layer.js" ></script>
+</head>
+<style>
+	.screen-right .container{padding: 0px !important;}
+	.charge_bbj{padding-bottom: 5%;}
+</style>
+<body style="width: 100vw;">
+	<div class="charge">
+		<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>充币<a href="chong_record.html">充币记录</a></h1>
+		<div class="charge_bbj">
+		<div  class="qr" style="width: 70%;padding:10% 0;margin: auto;"></div>
+		<div class="chas_lianjie">
+				<input readonly="readonly" value="d2321Cp17CzeSjy5SSevquS31232evqdfa4444452u" id="biao1">
+				<!--<p id="biao1">1723d3pBbYgzLdBPPdCp7CzeSjy5SSevquSevqu</p>-->
+			</div>
+		<p class="qr_btn" onclick="copyUrl2()">复制地址链接</p>			
+		</div>
+	</div>
+<script src="../../js/jquery.qrcode.min.js"></script>
+
+<script type="text/javascript">
+
+    jQuery('.qr').qrcode({
+        render: "canvas", //也可以替换为table
+        width: 80,
+        height: 80,
+        text: "{$address}"
+    });
+
+    $('canvas').css({
+        'width': '80%',
+        'display': 'block',
+        'margin': 'auto',
+        'position':'relative',
+        'top':'2vh',
+        'padding': '10px',
+    });
+
+</script>
+	<script>
+		function copyUrl2(){
+			var Url2=document.getElementById("biao1");
+			 Url2.select(); // 选择对象
+			document.execCommand("Copy"); // 执行浏览器复制命令
+			 layer.msg("复制成功",{ icon: 1,time: 2000});
+		 }
+	</script>
+</body>
+</html>

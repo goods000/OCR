@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../js/public.js"></script>
+		<link rel="stylesheet" href="../../css/style.css" />
+    	<link rel="stylesheet" href="../../css/font.css" />
+    	<style type="text/css">
+    		.xia_img1{transform:rotate(90deg);-ms-transform:rotate(90deg); -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg);-o-transform:rotate(90deg); }
+    	</style>
+	</head>
+	<body>
+		<!--头部标题-->
+		<h1 class="h1">
+			<button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>
+			收益记录
+		</h1>
+		<div class="re_l">
+			<span class="re_zong">
+				总收益
+				<b>+20.00</b>
+			</span>
+			<p class="p_bptton">
+				<span>预约天数</span>
+				<span>5天</span>
+			</p>
+			<p class="p_bptton">
+				<span>预约时间</span>
+				<span>2018-09-11 12:12:12</span>
+			</p>
+			<p class="p_bptton day_see">
+				<span>预约收益</span>
+				<span>总天数<span class="iconfont icon-xiangzuo1 xia_img"></span></span>
+			</p>
+			<div class="day_box">
+				<p class="p_bptton">
+					<span>第一天</span>
+					<span class="yuyue_btn">+3.00</span>
+				</p>
+				<p class="p_bptton">
+					<span>第二天</span>
+					<span class="yuyue_btn">+5.00</span>
+				</p>
+				<p class="p_bptton">
+					<span>第三天</span>
+					<span class="yuyue_btn">+12.00</span>
+				</p>
+				<p class="p_bptton">
+					<span>第四天</span>
+					<span class="yuyue_btn">+2.00</span>
+				</p>
+				<p class="p_bptton">
+					<span>第五天</span>
+					<span class="yuyue_btn">+99.00</span>
+				</p>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		$(".day_see").click(function(){
+			$(this).next().toggle();
+			$(this).find(".xia_img").toggleClass("xia_img1");
+		})
+	</script>
+</html>

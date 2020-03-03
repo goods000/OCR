@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/nav.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/font.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/swiper.css"/>
+		<script src="../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>
+		.bottom_nav dl dd:nth-child(1) a .dier {display: block !important;}
+		.bottom_nav dl dd:nth-child(1) a .diyi {display: none !important;}
+		.bottom_nav dl dd:nth-child(1) a span {color: #00C2FF;}
+		body{background: #fff;}
+		#modle_left{height:30vh;}
+	</style>
+	<body>
+		<!--轮播图-->
+		<div class="swiper-container swiper-container_sy">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="../../img/lun_bg.png"  alt=""/></div>
+				<div class="swiper-slide"><img src="../../img/lun_bg.png"  alt=""/></div>
+				<div class="swiper-slide"><img src="../../img/lun_bg.png"  alt=""/></div>
+				<div class="swiper-slide"><img src="../../img/lun_bg.png"  alt=""/></div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+		
+		<!--K线图-->
+		<!--<div class="index">
+			<p class="p">
+				<span>当前币种：
+					<select name="">
+						<option value="">OCR</option>
+					</select>
+					<img src="../../img/select.png" class="select" alt=""/>
+				</span>
+				<span>当前汇率： ≈$1.06</span>
+			</p>
+			<div id="pool_main" style="width: 100%;height:250px;"></div>
+		</div>-->
+		<!--公告-->
+		<a href="notice.html">
+			<div class="notice">
+				<img src="../../img/notice.png" class="notice_img" alt=""/>
+				<marquee class="dia1" scrollAmount=2 >OCR玩家新上线</marquee>
+			</div>
+		</a>	
+		
+		<b class="tips">玩家盛宴</b>
+		<div class="t_box">
+			<div id="nav">
+				<ul>
+					<li class="navTitle"><span class="navContent ">预定合约</span></li>
+					<li><span class="navContent">执行合约</span></li>
+				</ul>
+			</div>
+			<div class="tab">
+				<div class="box">
+					<div class="box_a">
+						<a href="yuyue.html">
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V1.png" class="levl" alt=""/>
+									<span class="levl_title">VIP1</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>10</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">200</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<a href="yuyue.html"><div class="y_btn">立即预约</div></a>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V2.png" class="levl" alt=""/>
+									<span class="levl_title">VIP2</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>25</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">500</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V3.png" class="levl"/>
+									<span class="levl_title">VIP3</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>35</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">700</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V4.png" class="levl"/>
+									<span class="levl_title">VIP2</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>50</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">1000</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V5.png" class="levl"/>
+									<span class="levl_title">VIP1</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>75</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">1500</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V6.png" class="levl"/>
+									<span class="levl_title">VIP2</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>100</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">2000</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+					</div>
+				</div>	
+				<div class="box two">
+					<div class="box_a duo">
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V1.png" class="levl" alt=""/>
+									<span class="levl_title">VIP1</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>10</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">200</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V2.png" class="levl" alt=""/>
+									<span class="levl_title">VIP2</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>25</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">500</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V3.png" class="levl"/>
+									<span class="levl_title">VIP3</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>35</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">700</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V4.png" class="levl"/>
+									<span class="levl_title">VIP2</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>50</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">1000</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V5.png" class="levl"/>
+									<span class="levl_title">VIP1</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>75</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">1500</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V6.png" class="levl"/>
+									<span class="levl_title">VIP2</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>100</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">2000</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+						<div class="box_b">
+							<div class="i_top">
+								<span class="top_img">
+									<img src="../../img/V6.png" class="levl"/>
+									<span class="levl_title">VIP2</span>
+								</span>
+								<span class="top_tilte">
+									<p class="it">预约金：<span>100</span><i>USDT</i></p>
+									<p class="it">收益率：<span>1%</span><i>/天</i></p>
+									<p class="it">金额：<span class="o">2000</span><i class="o">USDT</i></p>
+								</span>
+							</div>
+							<div class="y_btn">立即预约</div>
+						</div>
+					</div>
+				
+				<!--查看更多-->
+				<a href="yuyue_record.html" class="see_more">查看更多></a>
+				</div>
+			</div>	
+		</div>	
+		<b class="tips">最新预定</b>
+		<div class="table">
+			<div class="table_top">
+				<span>账号</span>
+				<span>合约金额</span>
+				<span>时间</span>
+			</div>
+			<div id="modle_left">
+				<div id="info">
+					<div class="table_title">
+						<span class="table_num">13335644654</span>
+						<span class="table_num">1000.0000 USDT</span>
+						<span class="table_num">2019/04/14 12:22</span>
+					</div>
+					<div class="table_title">
+						<span class="table_num">13335644654</span>
+						<span class="table_num">50000.0000 USDT</span>
+						<span class="table_num">2019/04/14 12:22</span>
+					</div>
+					<div class="table_title">
+						<span class="table_num">13335644654</span>
+						<span class="table_num">670.0000 USDT</span>
+						<span class="table_num">2019/04/14 12:22</span>
+					</div>
+					<div class="table_title">
+						<span class="table_num">13335644654</span>
+						<span class="table_num">50000.0000 USDT</span>
+						<span class="table_num">2019/04/14 12:22</span>
+					</div>
+					<div class="table_title">
+						<span class="table_num">13335644654</span>
+						<span class="table_num">50000.0000 USDT</span>
+						<span class="table_num">2019/04/14 12:22</span>
+					</div>
+					<div class="table_title">
+						<span class="table_num">13335644654</span>
+						<span class="table_num">0 USDT.0000</span>
+						<span class="table_num">2019/04/14 12:22</span>
+					</div>
+					<div class="table_title">
+						<span class="table_num">13335644654</span>
+						<span class="table_num">50.0000 USDT</span>
+						<span class="table_num">2019/04/14 12:22</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--底部导航栏-->
+		<div id="footer"></div>
+	</body>
+	<!--自动滚动数据-->
+	<script type="text/javascript">
+		$(function() {
+				function scollDown(id, time) {
+					var liHeight = $("#" + id + " #info .table_title ").height();
+					var time = time || 2500;
+					setInterval(function() {
+						$("#" + id + " #info ").prepend($("#" + id + " #info .table_title:last").css("height", "0px").animate({
+							height: liHeight + "px"
+						}, "slow"));
+					}, time);
+				}
+				scollDown("modle_left");
+				scollDown("modle_right", 3000);
+			});
+	</script>
+	<script type="text/javascript">
+		var $div_li = $('#nav ul li');
+        $('#nav ul li').click(function(){
+            $(this).addClass("navTitle").siblings().removeClass("navTitle"); 
+                var index =  $div_li.index(this);  
+            $("div.tab > div").eq(index).show().siblings().hide(); 
+		})
+		
+		var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        slidesPerView: 1,
+	        paginationClickable: true,
+	        loop: true,
+	        autoplay: 3500,
+	        autoplayDisableOnInteraction: false
+	    });
+	</script>
+	<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('pool_main'));
+
+        // 指定图表的配置项和数据
+   		option = {
+			    tooltip : {
+			    	trigger: 'axis',
+			    	axisPointer: {
+			            type: 'line',
+			            lineStyle: {
+			                color: "rgba(50,243,255,1)",
+			                width: 2,
+			                type: 'dashed'
+			            }
+			        },
+			    },
+			    calculable : true,
+			    xAxis : [
+			        {
+			            type : 'category',
+			            boundaryGap : false,
+			            data : ['12:00','13:00','14:00','15:00','16:00','17:00','18:00'],
+			            nameTextStyle:{ //名称的样式
+	                        color:'#C1C6CB',
+	                        fontSize:'12px'
+	                    },
+	                    axisLabel:{ //坐标轴刻度标签
+	                        margin:7, //刻度标签与轴线之间的距离
+	                        textStyle:{
+	                            color:"#C0C4CB", //坐标轴刻度文字的颜色
+	                            fontSize:'12px' //坐标轴刻度文字的大小
+	                        }
+	                    },
+	                    axisLine: { //坐标轴轴线相关设置
+				            show: true,
+				            lineStyle: {
+				                color: "#C0C4CB",
+				                width: 1,
+				            },
+				        },
+			        }
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+			            splitLine : { 
+		                    show:false,
+		                },
+		                nameTextStyle:{ //名称的样式
+	                        color:'#C1C6CB',
+	                        fontSize:'12px'
+	                    },
+	                    axisLabel:{ //坐标轴刻度标签
+	                        margin:7, //刻度标签与轴线之间的距离
+	                        textStyle:{
+	                            color:"#C0C4CB", //坐标轴刻度文字的颜色
+	                            fontSize:'12px' //坐标轴刻度文字的大小
+	                        }
+	                    },
+	                    axisLine: { //坐标轴轴线相关设置
+				            show: true,
+				            lineStyle: {
+				                color: "#C0C4CB",
+				                width: 1,
+				            },
+				        },
+			        }
+			    ],
+			    series : [
+			        {
+			            name:'成交',
+			            type:'line',
+			            smooth:true,
+			            data: [600, 620, 661, 604, 660, 830, 710],
+			            itemStyle: {
+			                normal: {
+			                    color: '#00C2FF',
+			                    borderColor: '#fff',
+			                    borderWidth: 1,
+			                    borderType: 'solid',
+			                    shadowColor: '#00C2FF',
+								shadowBlur: 2,
+							},
+						},
+						lineStyle: {
+								normal: {
+									width: 1,
+                    				symbol: 'none',
+                    				color:'#0f8f6b', //折线颜色
+								}
+							},
+						areaStyle: { //折线颜色不取渐变色，取color设置值
+								normal: {
+									color: {
+										type: 'linear',
+										x: 0,
+										y: 1,
+										x2: 0, //从左到右，但不能从上到下，需要借助辅助系列
+										y2: 0,
+										colorStops: [{
+											offset: 0,
+											color: 'rgb(23,60,110,.5)' // 0% 处的颜色
+										}, {
+											offset: 1,
+											color: 'rgba(50,243,255,1)' // 100% 处的颜色
+										}],
+										globalCoord: false // 缺省为 false
+									}
+								}
+							},	
+					}]
+			},
+		
+		// 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</html>

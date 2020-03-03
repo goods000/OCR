@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  	
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/font.css"/>
+		<script src="../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>
+		.h1{background: transparent;}
+		body{background: #fff;}
+		.thing ul li {background: #fff;}
+		.h1 a{color: #18ABD9;}
+	</style>
+	<body>
+		<!--头部标题-->
+		<h1 class="h1">
+			<button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>
+			我的团队
+		</h1>
+		<div class="team">
+			<div class="team_money">
+				<span>$</span><b>1,23454,4454</b>
+			</div>
+			<p class="pp">我的业绩</p>
+			<div class="team_top">
+				<div class="team_l">
+					<p>60</p>
+					<p>团队总人数</p>
+				</div>
+				<div class="team_line"></div>
+				<div class="team_l">
+					<p>12</p>
+					<p>直推人数</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="buy_box">
+			<b class="tips">直推人列表</b>
+			<div class="team_buy">
+				<img src="../../img/logo.png" alt="" class="team_tou"/>
+				<div class="zi_bi m_l">
+					<p class="zi_tu">
+						<span class="l">UID：&nbsp;&nbsp;123456</span>
+					</p>
+					<p class="zi_p">1233677</p>
+				</div>
+				<div class="zi_m bottom">
+					<b>$14575.00</b>
+				</div>
+			</div>
+			<div class="team_buy">
+				<img src="../../img/logo.png" alt="" class="team_tou"/>
+				<div class="zi_bi m_l">
+					<p class="zi_tu">
+						<span class="l">UID：&nbsp;&nbsp;123456</span>
+					</p>
+					<p class="zi_p">709090</p>
+				</div>
+				<div class="zi_m bottom">
+					<b>$9300.00</b>
+				</div>
+			</div>
+		</div>
+	    
+	    <!--底部导航栏-->
+	</body>
+<script>
+    function qrcodeCallback(result){
+		var lang="${lang}";
+		if(result.indexOf(window.location.host)==-1){ //等于-1表示这个字符串中没有o这个字符
+			layer.msg('当前扫描的不属于OCR二维码',{icon:5,time:1000});
+		}else{
+			window.location.href=result
+		}
+    }
+</script>	
+</html>

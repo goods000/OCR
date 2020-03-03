@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/font.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<script src="../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body style="background: #fff;">
+		<!--头部标题-->
+		<h1 class="h1">
+			登录
+		</h1>
+		<div class="logo_img">
+			<img src="../../img/logo2.png" class="logo" alt=""/>
+		</div>
+		<form>
+			<div class="gorup_box">
+				<img src="../../img/name.png" alt=""/>
+				<input type="text" placeholder="账号" name="" id="" value="" />
+			</div>
+			<div class="gorup_box">
+				<img src="../../img/psd.png" alt=""/>
+				<input type="password" placeholder="登录密码" name="" id="" value="" />
+				<img src="../../img/nosee.png" class="see"/>
+			</div>
+			<div class="gorup_box gorup_box1">
+				<img src="../../img/code.png" alt=""/>
+				<input type="text" placeholder="图形验证码" name="" id="" value="" />
+				<span id="tu_img">
+					<canvas width="100" height="40" id="verifyCanvas"></canvas>
+	                <img id="code_img" alt="">
+				</span> 
+			</div>
+			<a href="password.html" class="forget">忘记密码?</a>
+			<div class="btn">
+				登录
+			</div>
+			<a href="register.html" class="register">还没有账号? 去注册</a>
+		</form>
+	</body>
+	<script src="../../js/yzm.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("input").on("blur",function(){
+	        var toFix=$(this).offset().top;
+	        window.scroll(0,toFix);//失焦后强制让页面归位
+	    });
+		
+		var toggle = true;
+		$(".see").click(function() {
+			if(toggle) {
+				$(this).attr("src","../../img/see.png");
+				$(this).prev().attr("type","text");
+				toggle = false;
+			} else {
+				$(this).attr("src", "../../img/nosee.png");
+				$(this).prev().attr("type","password");
+				toggle = true;
+			}
+		});
+	</script>
+</html>

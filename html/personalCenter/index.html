@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  	
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/nav.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/swiper.css"/>
+		<script src="../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>
+		.bottom_nav dl dd:nth-child(4) a .dier {display: block !important;}
+		.bottom_nav dl dd:nth-child(4) a .diyi {display: none !important;}
+		.bottom_nav dl dd:nth-child(4) a span {color: #00C2FF;}
+		.h1{color:#fff;font-weight:100;letter-spacing:2px;text-align: center;font-size: 18px;padding:10px 0;background: transparent;border-bottom: 0px;}
+	</style>
+	<body>
+		<div class="header_ge">
+			<h1 class="h1">我的</h1>
+			<div class="ge_top">
+				<div id="xmTanDiv_1" class="touImg">
+                    <form>
+						<input type="hidden" id="uploadOrderid" name="id" value="">
+						<input type="file" name="file1" id="xdaTanFileImg_1" onchange="preview(this)" accept="image/*" />
+						<i><img src="../../img/logo.png" alt="" id="xmTanImg_1"/></i>
+					</form>
+				</div>
+				<div class="ge_left">
+					<h2>UID:123456</h2>	
+					<p>12345678901</p>
+					<div class="">
+						<div class="jibie">VIP1</div>
+						<div class="jibie1">钻石</div>
+					</div>
+				</div>
+			</div>
+			<div class="ge_bottom">
+				<span>
+					<p>30</p>
+					<p>团队总数</p>
+				</span>
+				<span>
+					<p>30</p>
+					<p>OCR总数</p>
+				</span>
+				<span>
+					<p>130</p>
+					<p>今日收益</p>
+				</span>
+			</div>
+		</div>
+		
+		
+		<div class="xx">
+			<div class="ge_list">
+				<a href="wallte.html" href="yong_record.html" class="list">
+					<div class="list_left">
+						<img src="../../img/wallte.png" class="tups_img1"/>
+						<span class="zi">
+							我的钱包
+						</span>
+					</div>
+					<img src="../../img/next.png" class="next_img"/>
+				</a>
+				<a href="mx.html" class="list">
+					<div class="list_left">
+						<img src="../../img/mingx.png" class="tups_img1"/>
+						<span class="zi">
+							收益明细
+						</span>
+					</div>
+					<img src="../../img/next.png" class="next_img"/>
+				</a>
+				<div class="gao"></div>
+				<a href="team.html" class="list">
+					<div class="list_left">
+						<img src="../../img/team.png" class="tups_img1"/>
+						<span class="zi">
+							我的团队
+						</span>
+					</div>
+					<img src="../../img/next.png" class="next_img"/>
+				</a>
+				<a href="qrcode.html" class="list">
+					<div class="list_left">
+						<img src="../../img/qr.png" class="tups_img1"/>
+						<span class="zi">
+							邀请推广
+						</span>
+					</div>
+					<img src="../../img/next.png" class="next_img"/>
+				</a>
+				<div class="gao"></div>
+				<a href="notice.html" class="list">
+					<div class="list_left">
+						<img src="../../img/gonggao.png" class="tups_img1"/>
+						<span class="zi">
+							系统公告
+						</span>
+					</div>
+					<img src="../../img/next.png" class="next_img"/>
+					<span id="span_xx">2</span>
+				</a>
+				<a href="grzl.html" class="list">
+					<div class="list_left">
+						<img src="../../img/setup.png" class="tups_img1"/>
+						<span class="zi">
+							安全设置
+						</span>
+					</div>
+					<img src="../../img/next.png" class="next_img"/>
+				</a>
+				<a href="chat.html" class="list">
+					<div class="list_left">
+						<img src="../../img/chat.png" class="tups_img1"/>
+						<span class="zi">
+							联系客服
+						</span>
+					</div>
+					<img src="../../img/next.png" class="next_img"/>
+				</a>
+				<div class="gao1"></div>
+			</div>
+		</div>
+		
+	    
+	    <!--底部导航栏-->
+	    <div id="footer"></div>
+	</body>
+	<script type="text/javascript">
+		function preview(file) {
+	        var file = file.files[0];
+			console.log(file);
+			console.log("file.size = " + file.size); //file.size 单位为byte
+			var reader = new FileReader();
+			reader.onload = function (e) {
+			console.log("成功读取....");
+			var size = file.size/1024;
+			var size = size/1024;
+			if (size>4) {
+				console.log(size);
+			alert('上传图片不能超过4MB，请重新选择!');return false;
+			}
+			var img = document.getElementById("xmTanImg_1");
+			img.src = e.target.result;
+			console.log(img);
+			//或者 img.src = this.result; //e.target == this
+			}
+			reader.readAsDataURL(file)
+		}
+	</script>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  	
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/font.css"/>
+		<script src="../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>
+		.h1{background: transparent;}
+		body{background: #fff;}
+		.thing ul li {background: #fff;}
+		.h1 a{color: #18ABD9;}
+	</style>
+	<body>
+		<!--头部标题-->
+		<h1 class="h1">
+			<button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>
+			我的钱包
+			<a href="mx.html">记录</a>
+		</h1>
+		<div class="header_zi">
+			<p class="pp">总资产</p>
+			<div class="q_m">
+				<span>￥</span><b>1,23454,4454</b>
+			</div>
+			<div class="zi_top">
+				<div class="zi_l">
+					<p>昨日收益</p>
+					<p>360.0</p>
+				</div>
+				<div class="zi_line"></div>
+				<div class="zi_l">
+					<p class="lei">累计收益</p>
+					<p class="lei">234533560.0</p>
+				</div>
+			</div>
+		</div>
+		<div class="thing">
+			<ul>
+				<a href="chong.html">
+					<li>
+						<img src="../../img/cb.png" />
+						<p>充币</p>
+					</li>
+				</a>
+				<a onClick="BSL.Qcode('0','qrcodeCallback')">
+					<li>
+						<img src="../../img/saoyisao.png" />
+						<p>扫一扫</p>
+					</li>
+				</a>
+				<a href="withdraw.html">
+					<li>
+						<img src="../../img/tb.png" />
+						<p>提币</p>
+					</li>
+				</a>
+				<a href="interturn.html">
+					<li>
+						<img src="../../img/zhuan.png" />
+						<p>互转</p>
+					</li>
+				</a>
+				<a href="exchange.html">
+					<li>
+						<img src="../../img/huiz.png" />
+						<p>兑换</p>
+					</li>
+				</a>
+			</ul>
+		</div>
+		<div class="gao"></div>
+		<div class="buy_box">
+			<b class="tips">我的资产</b>
+			<div class="zi_buy">
+				<div class="zi_bi">
+					<p class="zi_tu">
+						<img src="../../img/OCR.png"/>
+						<span>OCR</span>
+					</p>
+					<p class="zi_p">1 OCR ≈ $1.2677</p>
+				</div>
+				<div class="zi_m">
+					<b>14575.00</b>
+					<p>$14575.00 AIGC</p>
+				</div>
+			</div>
+			<div class="zi_buy">
+				<div class="zi_bi">
+					<p class="zi_tu">
+						<img src="../../img/USDT.png"/>
+						<span>USDT</span>
+					</p>
+					<p class="zi_p">1 USDT ≈ $1.2677</p>
+				</div>
+				<div class="zi_m">
+					<b>9300.00</b>
+					<p>$9300.00 AIGC</p>
+				</div>
+			</div>
+		</div>
+	    
+	    <!--底部导航栏-->
+	</body>
+<script>
+    function qrcodeCallback(result){
+		var lang="${lang}";
+		if(result.indexOf(window.location.host)==-1){ //等于-1表示这个字符串中没有o这个字符
+			layer.msg('当前扫描的不属于OCR二维码',{icon:5,time:1000});
+		}else{
+			window.location.href=result
+		}
+    }
+</script>	
+</html>

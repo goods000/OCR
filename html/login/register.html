@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/font.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<script src="../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body style="background: #fff;">
+		<!--头部标题-->
+		<h1 class="h1">
+			<button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>
+			注册
+		</h1>
+		<div class="logo_img">
+			<img src="../../img/logo2.png" class="logo" alt=""/>
+		</div>
+		<form>
+			<div class="gorup_box">
+				<img src="../../img/name.png" alt=""/>
+				<input type="number" placeholder="手机号码" name="" id="phone" value="" />
+			</div>
+			<div class="gorup_box">
+				<img src="../../img/code.png" alt=""/>
+				<input type="number" placeholder="短信验证码" name="" id="" value="" />
+				<a class="get_code" onclick="getCode(this)" id="J_getCode">获取验证码</a>
+				<a class="get_code1"><span id="J_second" >60</span>s后重发</a>
+			</div>
+			<div class="gorup_box">
+				<img src="../../img/psd.png" alt=""/>
+				<input type="password" placeholder="登录密码(字母与数字结合)" name="" id="" value="" />
+				<img src="../../img/nosee.png" class="see"/>
+			</div>
+			<div class="gorup_box">
+				<img src="../../img/psd.png" alt=""/>
+				<input type="password" placeholder="确认登录密码" name="" id="" value="" />
+				<img src="../../img/nosee.png" class="see"/>
+			</div>
+			<div class="gorup_box">
+				<img src="../../img/pay_pad.png" alt=""/>
+				<input type="password" placeholder="交易密码(6位数字)" name="" id="" value="" />
+				<img src="../../img/nosee.png" class="see"/>
+			</div>
+			<div class="gorup_box">
+				<img src="../../img/pay_pad.png" alt=""/>
+				<input type="password" placeholder="确认交易密码" name="" id="" value="" />
+				<img src="../../img/nosee.png" class="see"/>
+			</div>
+			<div class="gorup_box">
+				<img src="../../img/tui.png" alt=""/>
+				<input type="number" placeholder="推荐人ID号" name="" id="" value="" />
+			</div>
+			<div class="btn">
+				注册
+			</div>
+			<a href="#" class="register a">点击下载APP</a>
+		</form>
+	</body>
+	<script src="../../js/yzm.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var toggle = true;
+		$(".see").click(function() {
+			if(toggle) {
+				$(this).attr("src","../../img/see.png");
+				$(this).prev().attr("type","text");
+				toggle = false;
+			} else {
+				$(this).attr("src", "../../img/nosee.png");
+				$(this).prev().attr("type","password");
+				toggle = true;
+			}
+		});
+		
+		/*获取验证码*/
+		var isPhone = 1;
+		function getCode(e){
+			checkPhone(); //验证手机号码
+			if(isPhone){
+				resetCode(); //倒计时
+			}else{
+				$('#phone').focus();
+			}
+			
+		}
+		//验证手机号码
+		function checkPhone(){
+			var phone = $('#phone').val();
+			var pattern = /^1[0-9]{10}$/;
+			isPhone = 1;
+			if(phone == '') {
+				layer.msg("请输入手机号码", { icon: 2,time: 2000}); 
+				isPhone = 0;
+				return;
+			}
+			if(!pattern.test(phone)){
+				layer.msg("请输入正确的手机号码", { icon: 2,time: 2000}); 
+				isPhone = 0;
+				return;
+			}
+		}
+		//倒计时
+		function resetCode(){
+			$('#J_getCode').hide();
+		    $('#J_second').html('60');
+			$('.get_code1').show();
+			var second = 60;
+			var timer = null;
+			timer = setInterval(function(){
+				second -= 1;
+				if(second >0 ){
+					$('#J_second').html(second);
+				}else{
+					clearInterval(timer);
+					$('#J_getCode').show();
+					$('.get_code1').hide();
+				}
+			},1000);
+		}	
+		
+		$("#phone").blur(function(){
+			var phone = $('#phone').val();
+			var pattern = /^1[34578]\d{9}$/;
+			if(!pattern.test(phone)){
+				layer.msg("请输入正确的手机号码", { icon: 2,time: 2000}); 
+				$('#phone').val("");
+				isPhone = 0;
+				return;
+			}
+		})
+	</script>
+</html>
